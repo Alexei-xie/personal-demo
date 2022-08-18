@@ -1,0 +1,17 @@
+server:
+  port: 1212
+spring:
+  aop:
+    auto: true  #启动aop配置
+#  数据库配置
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+# mybatis配置
+mybatis:
+  #config-locations: mybatis/mybatis-config.xml
+  mapper-locations: com/itself/user/mapper/*.xml
+  type-aliases-package: com.itself.user.mapper.UserMapper
