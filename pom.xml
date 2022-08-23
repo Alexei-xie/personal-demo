@@ -51,13 +51,6 @@
             <version>3.5.2</version>
         </dependency>
         <dependency>
-            <groupId>com.aliyun.alicom</groupId>
-            <artifactId>alicom-mns-receive-sdk</artifactId>
-            <version>1.0.1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/alicom-mns-receive-sdk-1.0.1.jar</systemPath>
-        </dependency>
-        <dependency>
             <groupId>com.google.collections</groupId>
             <artifactId>google-collections</artifactId>
             <version>1.0</version>
