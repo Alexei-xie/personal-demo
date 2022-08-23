@@ -13,7 +13,6 @@ public class Demo01 {
         int result = pivotIndex(ints);
         System.out.println(result);
     }
-
     public static int pivotIndex(int[] nums) {
         //数组总合
         int sum = 0;
