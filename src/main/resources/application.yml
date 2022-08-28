@@ -15,3 +15,9 @@ mybatis:
   #config-locations: mybatis/mybatis-config.xml
   mapper-locations: com/itself/user/mapper/*.xml
   type-aliases-package: com.itself.user.mapper.UserMapper
+
+  rabbitmq:
+    virtual-host: /heima
+    username: guest
+    password: guest
+    addresses: 127.0.0.1:5672
