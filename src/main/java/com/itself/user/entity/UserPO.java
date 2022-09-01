@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 /**
  * @Author xxw
  * @Date 2022/07/09
@@ -15,4 +17,5 @@ public class UserPO {
     private Integer id;
     private String name;
     private Integer age;
+    private BigDecimal price;
 }

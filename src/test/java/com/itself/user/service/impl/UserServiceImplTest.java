@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -25,7 +26,9 @@ public class UserServiceImplTest {
     @Test
     public void listUser(){
         List<UserPO> list = userService.listAll();
-        System.out.println("list = " + list);
+        //System.out.println("list = " + list);
+        int i = list.get(0).getPrice().compareTo(new BigDecimal("0E-8"));
+        System.out.println(i);
     }
 
     @Test
