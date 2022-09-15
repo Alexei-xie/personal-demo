@@ -1,6 +1,7 @@
 package com.itself.user.service.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.google.common.collect.Lists;
 import com.itself.user.entity.UserPO;
 import com.itself.user.service.UserService;
 import org.junit.Test;
@@ -9,6 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -32,5 +35,12 @@ public class UserServiceImplTest {
     public void listUserPage(){
         Page<UserPO> page = userService.listPage(1, 2);
         System.out.println(page.getRecords());
+    }
+
+    @Test
+    public void test(){
+        ArrayList<String> list = Lists.newArrayList("张三", "章三", "张三");
+        Collections.sort(list);
+        System.out.println(list);
     }
 }
