@@ -1,11 +1,9 @@
-package com.itself.rabbitmq.demo01;
+package com.itself.example.rabbitmq.demo01;
 
-import com.itself.rabbitmq.ConnectUtil;
+import com.itself.example.rabbitmq.ConnectUtil;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
-
-import static com.itself.rabbitmq.demo01.Send.SIMPLE_QUEUE;
 
 /**
  * @Author xxw
@@ -20,7 +18,7 @@ public class ReceivedCorrect {
         // 创建通道
         Channel channel = connection.createChannel();
         // 声明队列
-        channel.queueDeclare(SIMPLE_QUEUE, false, false, false, null);
+        channel.queueDeclare(Send.SIMPLE_QUEUE, false, false, false, null);
         // 定义队列的消费者
         DefaultConsumer consumer = new DefaultConsumer(channel) {
             // 获取消息，并且处理，这个方法类似事件监听，如果有消息的时候，会被自动调用
@@ -33,6 +31,6 @@ public class ReceivedCorrect {
             }
         };
         // 监听队列，第二个参数：是否自动进行消息确认。
-        channel.basicConsume(SIMPLE_QUEUE, true, consumer);
+        channel.basicConsume(Send.SIMPLE_QUEUE, true, consumer);
     }
 }

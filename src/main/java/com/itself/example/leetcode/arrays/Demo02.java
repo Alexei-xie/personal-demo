@@ -1,4 +1,4 @@
-package com.itself.strive;
+package com.itself.example.leetcode.arrays;
 
 /**
  * @Author xxw

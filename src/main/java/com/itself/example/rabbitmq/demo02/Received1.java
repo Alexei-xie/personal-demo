@@ -1,11 +1,9 @@
-package com.itself.rabbitmq.demo02;
+package com.itself.example.rabbitmq.demo02;
 
-import com.itself.rabbitmq.ConnectUtil;
+import com.itself.example.rabbitmq.ConnectUtil;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
-
-import static com.itself.rabbitmq.demo02.Send.WORK_QUEUE;
 
 /**
  * @Author xxw
@@ -17,7 +15,7 @@ public class Received1 {
         Connection connection = ConnectUtil.getConnection();//获取连接
         Channel channel = connection.createChannel();//通过连接创建通道
         //声明队列
-        channel.queueDeclare(WORK_QUEUE,false,false,false,null);
+        channel.queueDeclare(Send.WORK_QUEUE,false,false,false,null);
         //设置消费者同时只能处理一条消息
         channel.basicQos(1);
         DefaultConsumer consumer = new DefaultConsumer(channel){//定义队列的消费者
@@ -37,6 +35,6 @@ public class Received1 {
             }
         };
         //继续监听队列
-        channel.basicConsume(WORK_QUEUE,false,consumer);
+        channel.basicConsume(Send.WORK_QUEUE,false,consumer);
     }
 }

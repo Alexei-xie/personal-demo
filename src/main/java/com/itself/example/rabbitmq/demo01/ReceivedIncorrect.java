@@ -1,11 +1,11 @@
-package com.itself.rabbitmq.demo01;
+package com.itself.example.rabbitmq.demo01;
 
-import com.itself.rabbitmq.ConnectUtil;
+import com.itself.example.rabbitmq.ConnectUtil;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
 
-import static com.itself.rabbitmq.demo01.Send.SIMPLE_QUEUE;
+import static com.itself.example.rabbitmq.demo01.Send.SIMPLE_QUEUE;
 
 /**
  * @Author xxw

@@ -1,4 +1,4 @@
-package com.itself.strive;
+package com.itself.example.leetcode.arrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;

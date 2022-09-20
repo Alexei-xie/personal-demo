@@ -1,6 +1,6 @@
-package com.itself.rabbitmq.demo02;
+package com.itself.example.rabbitmq.demo02;
 
-import com.itself.rabbitmq.ConnectUtil;
+import com.itself.example.rabbitmq.ConnectUtil;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 

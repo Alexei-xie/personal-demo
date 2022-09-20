@@ -1,11 +1,9 @@
-package com.itself.rabbitmq.demo04;
+package com.itself.example.rabbitmq.demo04;
 
-import com.itself.rabbitmq.ConnectUtil;
+import com.itself.example.rabbitmq.ConnectUtil;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
-
-import static com.itself.rabbitmq.demo04.DirectProducer.*;
 
 /**
  * @Author xxw
@@ -19,7 +17,7 @@ public class DirectConsumer1 {
         // 2. 从连接中创建通道，channel   使用通道才能完成消息相关的操作
         final Channel channel = connection.createChannel();
         // 绑定队列到交换机
-        channel.queueBind(DIRECT_QUEUE1, EXCHANGE_DIRECT, "insert");
+        channel.queueBind(DirectProducer.DIRECT_QUEUE1, DirectProducer.EXCHANGE_DIRECT, "insert");
         //  4. 定义队列的消费者
         DefaultConsumer consumer = new DefaultConsumer(channel) {
             // 获取消息，并且处理，这个方法类似事件监听，如果有消息的时候，会被自动调用
@@ -39,6 +37,6 @@ public class DirectConsumer1 {
             }
         };
         // 5. 监听队列，第二个参数：是否自动进行消息确认。 false 告诉队列不要删除消息
-        channel.basicConsume(DIRECT_QUEUE1, false, consumer);
+        channel.basicConsume(DirectProducer.DIRECT_QUEUE1, false, consumer);
     }
 }

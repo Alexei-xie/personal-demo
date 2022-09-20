@@ -1,11 +1,11 @@
-package com.itself.rabbitmq.demo05;
+package com.itself.example.rabbitmq.demo05;
 
-import com.itself.rabbitmq.ConnectUtil;
+import com.itself.example.rabbitmq.ConnectUtil;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
 
-import static com.itself.rabbitmq.demo05.TopicProducer.EXCHANGE_TOPIC;
+import static com.itself.example.rabbitmq.demo05.TopicProducer.EXCHANGE_TOPIC;
 
 /**
  * @Author xxw
