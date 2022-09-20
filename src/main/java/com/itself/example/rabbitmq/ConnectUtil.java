@@ -10,9 +10,6 @@ import com.rabbitmq.client.ConnectionFactory;
 public class ConnectUtil {
     /**
      * 建立与RabbitMQ的连接
-     *
-     * @return
-     * @throws Exception
      */
     public static Connection getConnection() throws Exception {
         //定义连接工厂
