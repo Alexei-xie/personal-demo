@@ -1,7 +1,7 @@
 package com.itself.aop.annotation;
 
-import com.itself.demo.enums.OperationType;
-import com.itself.demo.enums.OperationUnit;
+import com.itself.enums.OperationType;
+import com.itself.enums.OperationUnit;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

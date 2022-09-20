@@ -1,4 +1,4 @@
-package com.itself.example.多态;
+package com.itself.example.polymorphic;
 
 /**
  * 父类引用指向子类对象

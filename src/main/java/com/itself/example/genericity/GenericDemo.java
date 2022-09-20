@@ -1,4 +1,4 @@
-package com.itself.example.泛型;
+package com.itself.example.genericity;
 
 import com.google.common.collect.Lists;
 import com.itself.demo.bean.User;

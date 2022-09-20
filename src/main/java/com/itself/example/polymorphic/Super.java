@@ -1,4 +1,4 @@
-package com.itself.example.多态;
+package com.itself.example.polymorphic;
 
 /**
  * @Author xxw

@@ -1,4 +1,4 @@
-package com.itself.example.单例;
+package com.itself.example.singleton;
 
 /**懒汉式
  * @Author xxw

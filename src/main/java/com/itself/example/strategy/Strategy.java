@@ -1,4 +1,4 @@
-package com.itself.example.策略;
+package com.itself.example.strategy;
 
 /**
  * 策略代理

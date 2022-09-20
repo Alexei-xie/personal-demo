@@ -1,4 +1,4 @@
-package com.itself.example.单例;
+package com.itself.example.singleton;
 
 import java.util.concurrent.atomic.AtomicReference;
 

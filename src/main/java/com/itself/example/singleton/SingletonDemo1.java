@@ -1,6 +1,7 @@
-package com.itself.example.单例;
+package com.itself.example.singleton;
 
-/**饿汉式
+/**
+ * 饿汉式
  * @Author xxw
  * @Date 2022/06/09
  */

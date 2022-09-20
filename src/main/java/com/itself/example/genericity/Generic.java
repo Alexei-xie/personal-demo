@@ -1,10 +1,11 @@
-package com.itself.example.泛型;
+package com.itself.example.genericity;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 /**
+ * 泛型
  * @Author xxw
  * @Date 2022/03/27
  */

@@ -1,8 +1,8 @@
 package com.itself.aop.service.impl;
 
 import com.itself.aop.annotation.OperationLogDetail;
-import com.itself.demo.enums.OperationType;
-import com.itself.demo.enums.OperationUnit;
+import com.itself.enums.OperationType;
+import com.itself.enums.OperationUnit;
 import com.itself.aop.service.AopUserService;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.itself.example.线程.completableFuture;
+package com.itself.example.thread.completableFuture;
 
 import java.util.concurrent.CompletableFuture;
 

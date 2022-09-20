@@ -1,7 +1,9 @@
 package com.itself.demo.bean;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
@@ -10,7 +12,10 @@ import java.text.DecimalFormat;
  * @Date 2021/09/29
  */
 @Data
-public class User {
+@Accessors(chain = true)
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String name = "2";
     private String age ;

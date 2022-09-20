@@ -1,4 +1,4 @@
-package com.itself.demo.enums;
+package com.itself.enums;
 
 import java.util.Objects;
 

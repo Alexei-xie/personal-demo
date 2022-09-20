@@ -1,10 +1,11 @@
-package com.itself.example.策略;
+package com.itself.example.strategy;
 
 /**
+ * 策略模式
  * @Author xxw
  * @Date 2022/06/08
  */
-public class Sout {
+public class DemoPrint {
     public static void main(String[] args) {
         LiSi liSi = new LiSi();
         Strategy context = new Strategy();
