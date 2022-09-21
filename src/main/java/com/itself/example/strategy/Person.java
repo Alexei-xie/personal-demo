@@ -10,3 +10,18 @@ public interface Person {
      */
     void action();
 }
+
+class LiSi implements Person{
+    @Override
+    public void action() {
+        System.out.println("我是李四");
+    }
+}
+
+class ZhangSan implements Person{
+    @Override
+    public void action() {
+        System.out.println("我是张三");
+    }
+}
+
