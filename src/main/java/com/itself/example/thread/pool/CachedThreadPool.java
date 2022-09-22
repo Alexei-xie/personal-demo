@@ -4,11 +4,20 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- *  可缓存的线程池 newCachedThreadPool
+ *  可缓存的线程池
  * @Author xxw
  * @Date 2022/09/21
  */
 public class CachedThreadPool {
+    public static void main(String[] args) {
+
+    }
+}
+
+/**
+ * 可缓存的线程池 newCachedThreadPool
+ */
+class CachedThreadPool1{
     public static void main(String[] args) {
         ExecutorService threadPool = Executors.newCachedThreadPool(); // 创建一个可缓存的线程池
         for (int i = 0; i < 10; i++) {

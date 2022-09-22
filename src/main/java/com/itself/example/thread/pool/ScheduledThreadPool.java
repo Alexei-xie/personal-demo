@@ -1,18 +1,26 @@
 package com.itself.example.thread.pool;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 定时任务类型的线程池
- * newScheduledThreadPool
+ *  定时任务类型的线程池
  * @Author xxw
  * @Date 2022/09/21
  */
 public class ScheduledThreadPool {
+    public static void main(String[] args) {
+
+    }
+}
+
+/**
+ * 定时任务类型的线程池
+ * newScheduledThreadPool
+ */
+class ScheduledThreadPool1{
     public static void main(String[] args) {
         ScheduledExecutorService threadPool = Executors.newScheduledThreadPool(5); //创建一个线程数量为5的定时线程池
         System.out.println("添加任务的时间："+ LocalDateTime.now());
@@ -20,7 +28,6 @@ public class ScheduledThreadPool {
         threadPool.schedule(() -> System.out.println("执行子任务时间：" + LocalDateTime.now()),3, TimeUnit.SECONDS);
     }
 }
-
 /**
  * 创建单线程的定时任务线程池
  * newSingleThreadScheduledExecutor
@@ -34,7 +41,6 @@ class SingletonScheduledThreadPool5{
         },2,TimeUnit.SECONDS);
     }
 }
-
 /**
  * 周期性的执行线程任务 scheduleAtFixedRate()方法
  */
@@ -46,7 +52,6 @@ class ScheduledThreadPool2{
         threadPool.scheduleAtFixedRate(()-> System.out.println("执行子任务时间" + LocalDateTime.now()),3,4,TimeUnit.SECONDS);
     }
 }
-
 /**
  * 周期性执行线程任务
  * 线程睡眠时间 > 定时执行时间大小   ==》此时按照睡眠时间来进行周期性执行线程任务
@@ -65,7 +70,6 @@ class ScheduledThreadPool3{
         },2,3,TimeUnit.SECONDS);
     }
 }
-
 /**
  * 周期性执行线程任务 scheduleWithFixedDelay()方法
  */

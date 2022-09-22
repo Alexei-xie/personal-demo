@@ -1,18 +1,25 @@
 package com.itself.example.thread.pool;
 
-import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 import java.util.concurrent.*;
 
 /**
- * 固定线程数量的线程池   newFixedThreadPool
- *
+ *  固定线程数量的线程池
  * @Author xxw
  * @Date 2022/09/21
  */
 public class FixedThreadPool {
+    public static void main(String[] args) {
+
+    }
+}
+
+/**
+ * 固定线程数量的线程池   newFixedThreadPool
+ */
+class FixedThreadPool1{
     public static void main(String[] args) {
         ExecutorService threadPool = Executors.newFixedThreadPool(2);  // 创建只有2个线程的固定线程池
         // 添加任务1
@@ -24,10 +31,8 @@ public class FixedThreadPool {
         });
         // 添加任务2   lambda表达式写法
         threadPool.submit(() -> System.out.println(Thread.currentThread().getName()));
-
     }
 }
-
 /**
  * 有返回值
  */
@@ -53,7 +58,6 @@ class FixedThreadPool2 {
         System.out.println("-----" + result.get());
     }
 }
-
 /**
  *  自定义线程池中的线程名称和优先级
  */
