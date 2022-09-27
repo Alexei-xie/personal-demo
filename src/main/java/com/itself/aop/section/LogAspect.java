@@ -35,7 +35,11 @@ public class LogAspect {
     //    @Pointcut("@annotation(com.itself.annotation.OperationLogDetail)")
     public void operationLog() {
     }
+    @Before("operationLog()")
+    public void doBeforeAdvice(JoinPoint joinPoint) {
+        System.out.println("1.进入方法前执行.....");
 
+    }
     @Around("operationLog()")
     public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
         Object res = null;
@@ -71,7 +75,7 @@ public class LogAspect {
             operationLog.setOperationUnit(annotation.operationUnit().getValue());
         }
         // TODO 这里保存日志
-        System.out.println("记录日志：" + operationLog.toString());
+        System.out.println("5.记录日志：" + operationLog.toString());
     }
 
     /**
@@ -103,11 +107,7 @@ public class LogAspect {
         return detail;
     }
 
-    @Before("operationLog()")
-    public void doBeforeAdvice(JoinPoint joinPoint) {
-        System.out.println("进入方法前执行.....");
 
-    }
 
     /**
      * 处理完请求，返回内容
@@ -116,7 +116,7 @@ public class LogAspect {
      */
     @AfterReturning(returning = "ret", pointcut = "operationLog()")
     public void doAfterReturning(Object ret) {
-        System.out.println("方法的返回值 : " + ret);
+        System.out.println("3.方法的返回值 : " + ret);
     }
 
     /**
@@ -132,6 +132,6 @@ public class LogAspect {
      */
     @After("operationLog()")
     public void after(JoinPoint jp) {
-        System.out.println("方法最后执行.....");
+        System.out.println("4.方法最后执行.....");
     }
 }

@@ -1,10 +1,8 @@
 package com.itself.aop.controller;
 
 import com.itself.aop.service.AopUserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -13,6 +11,7 @@ import javax.annotation.Resource;
  * @Date 2021/08/17
  */
 @RestController
+@Controller
 @RequestMapping("user")
 public class UserController {
     @Resource

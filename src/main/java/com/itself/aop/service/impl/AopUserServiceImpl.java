@@ -16,7 +16,7 @@ public class AopUserServiceImpl implements AopUserService {
     @OperationLogDetail(detail = "通过手机号[{{tel}}]获取用户名" ,level= 3,operationUnit = OperationUnit.USER,operationType = OperationType.SELECT)
     @Override
     public String findUserName(String tel) {
-        System.out.println("tel:" + tel);
+        System.out.println("2.tel:" + tel);
         return "Blandness";
     }
 }
