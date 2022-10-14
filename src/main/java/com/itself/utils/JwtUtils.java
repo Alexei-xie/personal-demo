@@ -14,7 +14,7 @@ import java.util.Map;
  * @author 稳
  */
 @Component
-public class JwtUitls {
+public class JwtUtils {
 
     /**
      * 过期时间60分钟

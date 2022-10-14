@@ -38,7 +38,7 @@ public class ClassCompareUtil {
         Map<String, Map<String, Object>> map = null;
 
         try {
-            /**
+            /*
              * 只有两个对象都是同一类型的才有可比性
              */
             if (oldObject.getClass() == newObject.getClass()) {

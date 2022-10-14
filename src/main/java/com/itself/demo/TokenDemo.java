@@ -1,6 +1,6 @@
 package com.itself.demo;
 
-import com.itself.utils.JwtUitls;
+import com.itself.utils.JwtUtils;
 
 /**
  * @Author xxw
@@ -9,7 +9,7 @@ import com.itself.utils.JwtUitls;
 public class TokenDemo {
     public static void main(String[] args) {
 
-        String token = JwtUitls.createToken("xxw", "12");
+        String token = JwtUtils.createToken("xxw", "12");
         System.out.println(token);
     }
 }
