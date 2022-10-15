@@ -1,5 +1,6 @@
 package com.itself.utils;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -22,6 +23,17 @@ public class TimeUtils {
 
     private static final String DEFAULT_FORMAT = "yyyy-MM-dd HH:mm:ss";
     private static final String DAY_FORMAT = "yyyy-MM-dd";
+
+
+    /**
+     * Long类型的日期转为指定格式的字符串类型
+     */
+    public static String timeMillisToStr(Long dateTime){
+        SimpleDateFormat sdf = new SimpleDateFormat(DAY_FORMAT);
+        return sdf.format(new Date(dateTime));
+    }
+
+
 
     /**
      * 字符串类型日期转为 LocalDate类型
@@ -92,8 +104,19 @@ class TimeUtilDemo{
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DATE,1); //此时如果1是负数的时候即(-1)： 日期往前移一天
         System.out.println(calendar.getTime());
+        Long s = timeMillisToStr(new Date().getTime());
+        System.out.println(s.equals(20221014L));
     }
-
+    public static Long timeMillisToStr(Long dateTime){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String format = sdf.format(new Date(dateTime));
+        String[] split = format.split("-");
+        StringBuffer stringBuffer = new StringBuffer();
+        for (int i = 0; i < split.length; i++) {
+            stringBuffer.append(split[i]);
+        }
+        return Long.valueOf(stringBuffer.toString());
+    }
     /**
      * @param date 当前日期
      * @param cycle 周期量
