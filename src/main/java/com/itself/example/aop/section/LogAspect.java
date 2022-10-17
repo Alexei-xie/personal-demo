@@ -1,8 +1,8 @@
-package com.itself.aop.section;
+package com.itself.example.aop.section;
 
 import com.alibaba.fastjson.JSON;
-import com.itself.aop.annotation.OperationLogDetail;
-import com.itself.aop.model.OperationLog;
+import com.itself.example.aop.annotation.OperationLogDetail;
+import com.itself.example.aop.model.OperationLog;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;

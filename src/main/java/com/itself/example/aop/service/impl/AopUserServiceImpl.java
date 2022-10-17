@@ -1,9 +1,9 @@
-package com.itself.aop.service.impl;
+package com.itself.example.aop.service.impl;
 
-import com.itself.aop.annotation.OperationLogDetail;
+import com.itself.example.aop.annotation.OperationLogDetail;
 import com.itself.enums.OperationType;
 import com.itself.enums.OperationUnit;
-import com.itself.aop.service.AopUserService;
+import com.itself.example.aop.service.AopUserService;
 import org.springframework.stereotype.Service;
 
 /**

@@ -1,4 +1,4 @@
-package com.itself.aop.model;
+package com.itself.example.aop.model;
 
 import java.util.Date;
 

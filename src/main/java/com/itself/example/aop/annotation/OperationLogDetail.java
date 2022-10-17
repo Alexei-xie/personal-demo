@@ -1,4 +1,4 @@
-package com.itself.aop.annotation;
+package com.itself.example.aop.annotation;
 
 import com.itself.enums.OperationType;
 import com.itself.enums.OperationUnit;

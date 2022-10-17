@@ -1,6 +1,6 @@
-package com.itself.aop.controller;
+package com.itself.example.aop.controller;
 
-import com.itself.aop.service.AopUserService;
+import com.itself.example.aop.service.AopUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
