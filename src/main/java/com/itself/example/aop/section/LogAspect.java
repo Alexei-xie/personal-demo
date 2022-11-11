@@ -31,7 +31,7 @@ public class LogAspect {
     /**
      * 此处的切点是注解的方式，也可以用包名的方式达到相同的效果
      */
-    @Pointcut("execution(* com.itself.aop.service.impl.*.*(..))")
+    @Pointcut("execution(* com.itself.example.aop.service.impl.*.*(..))")
     //    @Pointcut("@annotation(com.itself.annotation.OperationLogDetail)")
     public void operationLog() {
     }
@@ -56,7 +56,7 @@ public class LogAspect {
 
     private void addOperationLog(ProceedingJoinPoint joinPoint, Object res, long time) {
         MethodSignature signature = (MethodSignature)joinPoint.getSignature();
-        OperationLog operationLog = new OperationLog();
+        OperationLog operationLog = new OperationLog();//此处将一些数据保存到操作日志中
         operationLog.setRunTime(time);
         operationLog.setReturnValue(JSON.toJSONString(res));
         operationLog.setId(UUID.randomUUID().toString());
@@ -106,8 +106,6 @@ public class LogAspect {
         }
         return detail;
     }
-
-
 
     /**
      * 处理完请求，返回内容

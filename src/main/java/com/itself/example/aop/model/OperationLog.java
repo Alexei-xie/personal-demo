@@ -3,6 +3,7 @@ package com.itself.example.aop.model;
 import java.util.Date;
 
 /**
+ * 操作日志
  * @Author xxw
  * @Date 2021/08/17
  */

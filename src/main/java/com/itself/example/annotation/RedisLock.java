@@ -2,6 +2,7 @@ package com.itself.example.annotation;
 
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.params.SetParams;
 
@@ -13,6 +14,7 @@ import java.util.Collections;
  * @Author xxw
  * @Date 2022/10/17
  */
+@Component
 public class RedisLock {
     private static final Long RELEASE_SUCCESS = 1L;
     private static final String LOCK_SUCCESS = "OK";
