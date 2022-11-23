@@ -13,7 +13,7 @@ import java.text.DecimalFormat;
  */
 @Data
 @Accessors(chain = true)
-public class User implements Serializable {
+public class User implements Serializable,Cloneable {
 
     private static final long serialVersionUID = 1L;
 
@@ -56,5 +56,21 @@ public class User implements Serializable {
         if(a.compareTo(b) == 1) {
             System.out.println("a大于b");
         }
+
+        //测试clone方法
+        try {
+            User clone = (User)user.clone();
+            System.out.println(clone);
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 重写clone方法，主要目的是为了将修饰方法的 protected 权限修改为 public
+     */
+    @Override
+    public Object clone()throws CloneNotSupportedException{
+        return super.clone();
     }
 }
