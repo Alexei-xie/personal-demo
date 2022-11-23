@@ -58,6 +58,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
+        <!--MyBatis分页插件  1.2.10版本会跟springboot2.7.0版本造成循环依赖，分页插件1.4.2版本内部自动解决了循环依赖的问题  -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.4.2</version>
+        </dependency>
 <!-- ======================end================================= -->
         <!--poi-->
         <dependency>
@@ -65,7 +71,6 @@
             <artifactId>poi-tl</artifactId>
             <version>1.12.0</version>
         </dependency>
-
         <!--数据库启动类-->
         <dependency>
             <groupId>mysql</groupId>

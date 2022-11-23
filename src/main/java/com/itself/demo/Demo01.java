@@ -3,6 +3,7 @@ package com.itself.demo;
 import com.itself.demo.bean.User;
 
 import java.util.logging.Logger;
+import java.util.stream.Stream;
 
 /**
  * @Author xxw
@@ -10,12 +11,6 @@ import java.util.logging.Logger;
  */
 public class Demo01 {
     public static void main(String[] args) {
-        User user = new User().setAge("11").setName("xxw");
-        try {
-            User clone = (User)user.clone();
-            System.out.println(clone);
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
-        }
+        Stream.iterate(0,i -> i+1).parallel().limit(5).forEach(System.out::println);
     }
 }
