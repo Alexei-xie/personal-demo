@@ -20,8 +20,8 @@ public class SingleThreadExecutor {
  * 单线程的线程池
  */
 class SingleThreadExecutor1{
+    static final ExecutorService executor = Executors.newSingleThreadExecutor();
     public static void main(String[] args) {
-        ExecutorService executor = Executors.newSingleThreadExecutor();
         for (int i = 0; i < 10; i++) {
             executor.submit(()-> System.out.println("线程名称：" + Thread.currentThread().getName()));
         }

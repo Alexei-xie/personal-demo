@@ -20,8 +20,8 @@ public class FixedThreadPool {
  * 固定线程数量的线程池   newFixedThreadPool
  */
 class FixedThreadPool1{
+    static final ExecutorService threadPool = Executors.newFixedThreadPool(2);  // 创建只有2个线程的固定线程池
     public static void main(String[] args) {
-        ExecutorService threadPool = Executors.newFixedThreadPool(2);  // 创建只有2个线程的固定线程池
         // 添加任务1
         threadPool.submit(new Runnable() {
             @Override
@@ -37,8 +37,8 @@ class FixedThreadPool1{
  * 有返回值
  */
 class FixedThreadPool2 {
+    static final ExecutorService threadPool = Executors.newFixedThreadPool(2);
     public static void main(String[] args) throws Exception {
-        ExecutorService threadPool = Executors.newFixedThreadPool(2);
         // 添加任务1
         Future<Integer> submit = threadPool.submit(new Callable<Integer>() {
             @Override
