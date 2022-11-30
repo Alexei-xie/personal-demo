@@ -1,0 +1,52 @@
+package com.itself.example.thread.thread;
+
+import com.google.common.collect.Lists;
+import org.apache.poi.ss.formula.functions.T;
+
+import java.util.ArrayList;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+
+/**
+ * @Author xxw
+ * @Date 2022/11/30
+ */
+public class ThreadDemo {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        new SingleThread().start();  //thread方式启动
+
+        SingleRunnable runnable = new SingleRunnable();
+        Thread thread2 = new Thread(runnable);
+        thread2.start();//runnable方式启动
+
+        SingleCallable callable = new SingleCallable();
+        FutureTask<String> task = new FutureTask<>(callable);//改返回值是线程返回值，通过 xx.get()方法获取
+        new Thread(task).start();
+        System.out.println(task.get());
+    }
+}
+
+/**
+ * 方式一：继承Thread类
+ */
+class SingleThread extends Thread {
+    @Override
+    public void run() {
+        Lists.newArrayList("11", "22", "33").forEach(System.out::println);
+        super.run();
+    }
+}
+class SingleRunnable implements Runnable{
+    @Override
+    public void run() {
+        Lists.newArrayList("aa", "bb", "cc").forEach(System.out::println);
+    }
+}
+class SingleCallable implements Callable<String>{
+    @Override
+    public String call() throws Exception {
+        System.out.println("callable");
+        return "ok";
+    }
+}
