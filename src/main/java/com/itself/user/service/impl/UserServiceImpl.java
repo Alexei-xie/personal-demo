@@ -2,6 +2,7 @@ package com.itself.user.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.itself.user.entity.UserPO;
 import com.itself.user.mappser.UserMapper;
 import com.itself.user.service.UserService;
@@ -15,7 +16,7 @@ import java.util.List;
  * @Date 2022/07/09
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends ServiceImpl<UserMapper,UserPO> implements UserService{
 
 
     /**

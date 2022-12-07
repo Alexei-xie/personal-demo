@@ -1,6 +1,7 @@
 package com.itself.user.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.itself.user.entity.UserPO;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
  * @Date 2022/07/09
  */
 
-public interface UserService {
+public interface UserService extends IService<UserPO> {
     /**
      * 查询所有数据
      */
