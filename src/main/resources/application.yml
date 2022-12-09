@@ -1,6 +1,9 @@
 server:
   port: 1212
 spring:
+  mvc: # 需要修改MVC的匹配策略，不然会不显示接口
+    path match:
+      matching-strategy: ant_path_matcher
   aop:
     auto: true  #启动aop配置
 #  数据库配置
