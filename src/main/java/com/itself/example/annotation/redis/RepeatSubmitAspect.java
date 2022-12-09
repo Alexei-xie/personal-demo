@@ -1,4 +1,4 @@
-package com.itself.example.annotation;
+package com.itself.example.annotation.redis;
 
 import com.baomidou.mybatisplus.core.toolkit.Assert;
 import lombok.extern.slf4j.Slf4j;

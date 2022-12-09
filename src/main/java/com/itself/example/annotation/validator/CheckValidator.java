@@ -1,4 +1,4 @@
-package com.itself.example.annotation.valid;
+package com.itself.example.annotation.validator;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

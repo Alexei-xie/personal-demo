@@ -1,4 +1,4 @@
-package com.itself.example.annotation.valid;
+package com.itself.example.annotation.validator;
 
 import com.itself.common.exception.BusinessException;
 import org.apache.commons.lang3.StringUtils;

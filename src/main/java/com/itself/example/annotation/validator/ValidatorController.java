@@ -1,4 +1,4 @@
-package com.itself.example.annotation.valid;
+package com.itself.example.annotation.validator;
 
 import com.itself.common.result.Response;
 import io.swagger.annotations.Api;

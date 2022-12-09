@@ -1,4 +1,4 @@
-package com.itself.example.annotation;
+package com.itself.example.annotation.redis;
 
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.StringRedisTemplate;

@@ -1,4 +1,4 @@
-package com.itself.example.annotation.valid;
+package com.itself.example.annotation.validator;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
