@@ -23,10 +23,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
+ * Swagger2API文档的配置
  * @Author xxw
  * @Date 2022/08/10
- *
- * Swagger2API文档的配置
  */
 @Configuration
 @EnableOpenApi

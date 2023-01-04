@@ -10,10 +10,9 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**
+ *  控制台输出 Swagger 接口文档地址
  * @Author xxw
  * @Date 2022/08/10
- *
- * 控制台输出 Swagger 接口文档地址
  */
 @Component
 @Slf4j

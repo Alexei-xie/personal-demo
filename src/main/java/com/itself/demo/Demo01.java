@@ -1,10 +1,7 @@
 package com.itself.demo;
 
-import cn.hutool.http.HttpUtil;
-import com.itself.demo.bean.User;
-
-import java.util.logging.Logger;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author xxw
@@ -12,8 +9,10 @@ import java.util.stream.Stream;
  */
 public class Demo01 {
     public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        System.out.println(list.size());
         // Stream.iterate(0,i -> i+1).parallel().limit(5).forEach(System.out::println);
-        String result = HttpUtil.get("https://www.baidu.com");
-        System.out.println(result);
+        // String result = HttpUtil.get("https://www.baidu.com");
+        // System.out.println(result);
     }
 }
