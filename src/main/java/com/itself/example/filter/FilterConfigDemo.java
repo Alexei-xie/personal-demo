@@ -13,10 +13,15 @@ import javax.servlet.Filter;
 // @Configuration
 public class FilterConfigDemo {
 
+    /**
+     * Bean注解声明当前返回的是一个bean对象
+     * 表示一个方法产生了一个由spring容器管理的bean
+     * @return Bean对象
+     */
     @Bean
     public FilterRegistrationBean<Filter> registerFilter(){
         FilterRegistrationBean<Filter> registrationBean = new FilterRegistrationBean<>();
-        registrationBean.setFilter(new MyFilter());
+        // registrationBean.setFilter(new MyFilter());
         registrationBean.addUrlPatterns("/*");
         registrationBean.setName("FilterDemo");
         registrationBean.setOrder(1);

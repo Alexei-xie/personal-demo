@@ -13,8 +13,8 @@ import java.io.IOException;
  * @Date 2023/01/04
  */
 @Order(1) //示如果有多个拦截器的话就是设置这个拦截器的运行等级，数字越小，越先执行
-@WebFilter(filterName = "myFilter",urlPatterns = {"/*"}) //urlPatter表示要拦截的URL资源，可以是一个或者多个
-public class MyFilter implements Filter {
+@WebFilter(filterName = "MyFilter1",urlPatterns = {"/*"}) //urlPatter表示要拦截的URL资源，可以是一个或者多个
+public class MyFilter1 implements Filter {
 
     /**
      * 方法只会执行一次，初始化过滤器
@@ -26,7 +26,7 @@ public class MyFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         // Filter.super.init(filterConfig);
-        System.out.println("初始化过滤器");
+        System.out.println("my filter initialization");
     }
 
     /**
@@ -42,9 +42,10 @@ public class MyFilter implements Filter {
      */
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println("进入目标资源之前先干点啥====");
+        System.out.println("my filter in target");
         filterChain.doFilter(servletRequest,servletResponse);
-        System.out.println("处理一下服务端返回的response====");
+        // System.out.println("my filter handle resources");
+        System.out.println("my filter handle response");
     }
 
 
@@ -54,6 +55,6 @@ public class MyFilter implements Filter {
     @Override
     public void destroy() {
         // Filter.super.destroy();
-        System.out.println("过滤器被销毁====");
+        System.out.println("my filter destroyed");
     }
 }

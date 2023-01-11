@@ -5,13 +5,11 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * @Author xxw
- * @Date 2022/08/25
- *
  * 二维数组样式：[[1,3],[2,6],[8,10],[15,18]]  中括号中只会有两个值
- *
  * 请你合并所有重叠的区间，并返回 一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间
  * https://leetcode.cn/leetbook/read/array-and-string/c5tv3/
+ * @Author xxw
+ * @Date 2022/08/25
  */
 public class Demo03 {
 

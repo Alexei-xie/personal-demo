@@ -1,11 +1,10 @@
 package com.itself.example.leetcode.arrays;
 
 /**
- * @Author xxw
- * @Date 2022/08/23
- *
  * 给你一个整数数组 nums ，请计算数组的 中心下标
  * https://leetcode.cn/leetbook/read/array-and-string/yf47s/
+ * @Author xxw
+ * @Date 2022/08/23
  */
 public class Demo01 {
     public static void main(String[] args) {
