@@ -13,14 +13,16 @@ spring:
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
+ #rabbitmq配置
+  rabbitmq:
+    virtual-host: /heima
+    username: guest
+    password: guest
+    addresses: 127.0.0.1:5672
+
 # mybatis配置
 mybatis:
   #config-locations: mybatis/mybatis-config.xml
   mapper-locations: com/itself/user/mapper/*.xml
   type-aliases-package: com.itself.user.mapper.UserMapper
 
-  rabbitmq:
-    virtual-host: /heima
-    username: guest
-    password: guest
-    addresses: 127.0.0.1:5672
