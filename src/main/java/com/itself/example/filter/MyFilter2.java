@@ -3,7 +3,6 @@ package com.itself.example.filter;
 import org.springframework.core.annotation.Order;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 /**
@@ -11,7 +10,7 @@ import java.io.IOException;
  * @Date 2023/01/11
  */
 @Order(2)
-@WebFilter(filterName = "MyFilter2",urlPatterns = {"/*"})
+// @WebFilter(filterName = "MyFilter2",urlPatterns = {"/*"})
 public class MyFilter2 implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

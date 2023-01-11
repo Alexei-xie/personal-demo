@@ -4,7 +4,6 @@ package com.itself.example.filter;
 import org.springframework.core.annotation.Order;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 /**
@@ -13,7 +12,7 @@ import java.io.IOException;
  * @Date 2023/01/04
  */
 @Order(1) //示如果有多个拦截器的话就是设置这个拦截器的运行等级，数字越小，越先执行
-@WebFilter(filterName = "MyFilter1",urlPatterns = {"/*"}) //urlPatter表示要拦截的URL资源，可以是一个或者多个
+// @WebFilter(filterName = "MyFilter1",urlPatterns = {"/*"}) //urlPatter表示要拦截的URL资源，可以是一个或者多个
 public class MyFilter1 implements Filter {
 
     /**
