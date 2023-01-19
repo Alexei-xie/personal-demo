@@ -4,10 +4,9 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
 
 /**
+ * 测试对象的clone方法 类要实现Cloneable接口
  * @Author xxw
  * @Date 2021/09/29
  */
@@ -23,7 +22,7 @@ public class User implements Serializable,Cloneable {
 
 
     public static void main(String[] args) {
-        User user = new User();
+        User user = new User().setName("22").setAge("11");
         //测试clone方法
         try {
             User clone = (User)user.clone();
