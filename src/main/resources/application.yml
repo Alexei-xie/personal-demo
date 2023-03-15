@@ -30,6 +30,7 @@ mybatis:
 cxf:
   path: /demo
 
+# 测试value注解取值
 demo:
   test: 100
 

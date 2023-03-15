@@ -26,12 +26,8 @@ public class UserServiceImplTest {
     @Resource
     private UserService userService;
 
-    @Value("${demo.test}")
-    private  int count;
-
     @Test
     public void listUser(){
-        System.out.println(count);
         List<UserPO> list = userService.listAll();
         System.out.println("list = " + list);
     }
@@ -47,5 +43,12 @@ public class UserServiceImplTest {
         ArrayList<String> list = Lists.newArrayList("张三", "章三", "张三");
         Collections.sort(list);
         System.out.println(list);
+    }
+
+    @Value("${demo.test}")
+    private  int count;
+    @Test
+    public void testValue() {
+        System.out.println(count);
     }
 }
