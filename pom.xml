@@ -130,8 +130,16 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- CXF webservice -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
+            <version>3.4.5</version>
+        </dependency>
 
-<!-- ============工具包========== -->
+
+
+        <!-- ============工具包========== -->
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
