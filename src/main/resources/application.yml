@@ -30,4 +30,7 @@ mybatis:
 cxf:
   path: /demo
 
+demo:
+  test: 100
+
 
