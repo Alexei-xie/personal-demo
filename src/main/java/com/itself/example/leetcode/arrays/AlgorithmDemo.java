@@ -1,6 +1,8 @@
 package com.itself.example.leetcode.arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**力扣算法模块做题demo
  * https://leetcode.cn/study-plan/algorithms/?progress=xxhe26c2
@@ -9,13 +11,14 @@ import java.util.Arrays;
  */
 public class AlgorithmDemo {
     public static void main(String[] args) {
-        int[] nums = {1,2,3,4,5,6,7};
+        int[] nums = {2,1};
         // System.out.println(search(nums,3));
 
         // System.out.println(firstBadVersion(5));
 
         // System.out.println(searchInsert(nums, 7));
-        System.out.println(Arrays.toString(rotate(nums,3)));
+        // System.out.println(Arrays.toString(rotate(nums,3)));
+        System.out.println(Arrays.toString(moveZeroes(nums)));
     }
 
     /**
@@ -66,7 +69,6 @@ public class AlgorithmDemo {
         }
         return left;
     }
-
     private static boolean isBadVersion(int s) {
         return s == 4;
     }
@@ -115,11 +117,12 @@ public class AlgorithmDemo {
         return ans;
     }
 
-    /** 自己通过笨方法一步一步实现，建议查看大佬们的题解思路
+    /**
      * 189. 轮转数组
      * 数组
      * 数学
      * 双指针
+     * 自己通过笨方法一步一步实现，需查看大佬们的题解思路
      * @param nums
      * @param k
      * @return
@@ -150,4 +153,40 @@ public class AlgorithmDemo {
         return nums;
     }
 
+    /**
+     * 283. 移动零
+     * 数组
+     * 双指针
+     * 没有按照题目要求进行解答，需学习大佬们的题解思路
+     * @param nums
+     * @return
+     */
+    public static int[] moveZeroes(int[] nums) {
+        if (nums.length<=1){
+            return nums;
+        }
+        int[] arr = Arrays.copyOf(nums, nums.length);
+        List<Integer> list = new ArrayList<>();
+        List<Integer> list1 = new ArrayList<>();
+        for (int j : arr) {
+            if (j == 0) {
+                list.add(j);
+            } else {
+                list1.add(j);
+            }
+        }
+        if (list.size() == 0){
+            return nums;
+        }
+        for (int i = 0; i < list1.size(); i++) {
+            nums[i] = list1.get(i);
+        }
+        int size = list1.size();
+        for (Integer integer : list) {
+            nums[size] = integer;
+            size++;
+
+        }
+        return nums;
+    }
 }
