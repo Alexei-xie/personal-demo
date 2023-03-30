@@ -1,5 +1,6 @@
 package com.itself.utils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -23,6 +24,9 @@ public class TimeUtils {
 
     private static final String DEFAULT_FORMAT = "yyyy-MM-dd HH:mm:ss";
     private static final String DAY_FORMAT = "yyyy-MM-dd";
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+    private static final SimpleDateFormat sdf2 = new SimpleDateFormat("MMdd");
+    private static final SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd");
 
 
     /**
@@ -93,6 +97,36 @@ public class TimeUtils {
         }
     }
 
+    /**
+     * 根据新旧日期字符串计算两者所差年份
+     * @param old 旧日期 2023-03-30
+     * @param now 最新的日期  2020-03-30
+     * @return  不满一年算一年，一年多算两年
+     */
+    public static Long computeYear(String old,String now){
+        try {
+            Date oldDate = sdf.parse(old);
+            Date nowDate = sdf.parse(now);
+            long a = Long.parseLong(sdf.format(nowDate))-Long.parseLong(sdf.format(oldDate));
+            if (equalsLarge(old,now)){
+                a= a+1;
+            }
+            return a;
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 比较日期大小，用来判断是否需要对年份进行+1
+     */
+    private static Boolean equalsLarge(String old,String now){
+        try {
+            return Long.parseLong(sdf2.format(sdf3.parse(now))) > Long.parseLong(sdf2.format(sdf3.parse(old)));
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 
 class TimeUtilDemo{
