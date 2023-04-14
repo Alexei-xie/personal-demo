@@ -4,27 +4,31 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**力扣算法模块做题demo
+/**
+ * 力扣算法模块做题demo
  * https://leetcode.cn/study-plan/algorithms/?progress=xxhe26c2
+ *
  * @Author xxw
  * @Date 2022/09/30
  */
 public class AlgorithmDemo {
     public static void main(String[] args) {
-        int[] nums = {2,1};
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        System.out.println(rotateMain(nums, 3));
         // System.out.println(search(nums,3));
 
         // System.out.println(firstBadVersion(5));
 
         // System.out.println(searchInsert(nums, 7));
         // System.out.println(Arrays.toString(rotate(nums,3)));
-        System.out.println(Arrays.toString(moveZeroes(nums)));
+        // System.out.println(Arrays.toString(moveZeroes(nums)));
     }
 
     /**
      * 704. 二分查找
      * 数组
      * 二分查找
+     *
      * @param nums
      * @param target
      * @return
@@ -52,6 +56,7 @@ public class AlgorithmDemo {
      * 278. 第一个错误的版本
      * 二分查找
      * 交互
+     *
      * @param n
      * @return
      */
@@ -69,6 +74,7 @@ public class AlgorithmDemo {
         }
         return left;
     }
+
     private static boolean isBadVersion(int s) {
         return s == 4;
     }
@@ -77,6 +83,7 @@ public class AlgorithmDemo {
      * 35. 搜索插入位置
      * 数组
      * 二分查找
+     *
      * @param nums
      * @param target
      * @return
@@ -102,6 +109,7 @@ public class AlgorithmDemo {
      * 数组
      * 双指针
      * 排序
+     *
      * @param nums
      * @return
      */
@@ -123,6 +131,7 @@ public class AlgorithmDemo {
      * 数学
      * 双指针
      * 自己通过笨方法一步一步实现，需查看大佬们的题解思路
+     *
      * @param nums
      * @param k
      * @return
@@ -134,9 +143,9 @@ public class AlgorithmDemo {
         int more = 0;
         if (k > nums.length) {
             // 进行取余运算
-            more =nums.length  - k % nums.length ;
+            more = nums.length - k % nums.length;
         } else {
-            more = nums.length - k ;
+            more = nums.length - k;
         }
         int[] arr = Arrays.copyOf(nums, nums.length);
         int indexStart = more;
@@ -154,15 +163,37 @@ public class AlgorithmDemo {
     }
 
     /**
+     * 解法2：力扣官方解法
+     * 数组翻转
+     */
+    public static int[] rotateMain(int[] nums, int k) {
+        k %= nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
+        return nums;
+    }
+    public static void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start += 1;
+            end -= 1;
+        }
+    }
+
+    /**
      * 283. 移动零
      * 数组
      * 双指针
      * 没有按照题目要求进行解答，需学习大佬们的题解思路
+     *
      * @param nums
      * @return
      */
     public static int[] moveZeroes(int[] nums) {
-        if (nums.length<=1){
+        if (nums.length <= 1) {
             return nums;
         }
         int[] arr = Arrays.copyOf(nums, nums.length);
@@ -175,7 +206,7 @@ public class AlgorithmDemo {
                 list1.add(j);
             }
         }
-        if (list.size() == 0){
+        if (list.size() == 0) {
             return nums;
         }
         for (int i = 0; i < list1.size(); i++) {

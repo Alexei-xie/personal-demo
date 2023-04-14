@@ -1,6 +1,8 @@
 server:
   port: 1212
 spring:
+  application:
+    name: personal-demo # 服务名
   mvc: # 需要修改MVC的匹配策略，不然会不显示接口
     path match:
       matching-strategy: ant_path_matcher
