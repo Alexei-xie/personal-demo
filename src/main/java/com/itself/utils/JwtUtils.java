@@ -4,16 +4,14 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author 稳
+ * JWT工具类
  */
-@Component
 public class JwtUtils {
 
     /**
@@ -50,7 +48,7 @@ public class JwtUtils {
     }
 
 //得到token中的account
-    public String getAccount(String token) {
+    public static String getAccount(String token) {
         Claims claims = Jwts.parser().setSigningKey(KEY).parseClaimsJws(token).getBody();
         String account = claims.getSubject();
         return account;

@@ -1,4 +1,4 @@
-package com.itself.example.easyExcel;
+package com.itself.example.easyexcel;
 
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.write.style.column.LongestMatchColumnWidthStyleStrategy;

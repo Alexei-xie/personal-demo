@@ -1,4 +1,4 @@
-package com.itself.example.xmlAnalysis.case2;
+package com.itself.example.xmlanalysis.case2;
 
 import lombok.Data;
 

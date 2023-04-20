@@ -1,4 +1,4 @@
-package com.itself.example.xmlAnalysis.case1;
+package com.itself.example.xmlanalysis.case1;
 
 import com.google.common.collect.Lists;
 import com.itself.utils.XmlAnalysisUtil;

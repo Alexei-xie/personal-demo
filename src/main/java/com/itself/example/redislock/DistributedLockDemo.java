@@ -1,4 +1,4 @@
-package com.itself.example.redisLock;
+package com.itself.example.redislock;
 
 import org.springframework.data.redis.core.StringRedisTemplate;
 

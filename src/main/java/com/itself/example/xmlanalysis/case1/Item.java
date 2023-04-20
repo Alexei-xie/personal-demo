@@ -1,4 +1,4 @@
-package com.itself.example.xmlAnalysis.case1;
+package com.itself.example.xmlanalysis.case1;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
