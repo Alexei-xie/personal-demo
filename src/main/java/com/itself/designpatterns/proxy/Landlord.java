@@ -1,4 +1,4 @@
-package com.itself.example.proxy;
+package com.itself.designpatterns.proxy;
 
 
 public interface Landlord {

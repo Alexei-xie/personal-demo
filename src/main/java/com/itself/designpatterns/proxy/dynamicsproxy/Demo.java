@@ -1,7 +1,7 @@
-package com.itself.example.proxy.dynamicsproxy;
+package com.itself.designpatterns.proxy.dynamicsproxy;
 
-import com.itself.example.proxy.Landlord;
-import com.itself.example.proxy.staticproxy.HangZhouLandlord;
+import com.itself.designpatterns.proxy.Landlord;
+import com.itself.designpatterns.proxy.staticproxy.HangZhouLandlord;
 
 /**
  * @Author xxw

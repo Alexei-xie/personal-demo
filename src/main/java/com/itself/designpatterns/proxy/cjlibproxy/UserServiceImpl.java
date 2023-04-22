@@ -1,4 +1,4 @@
-package com.itself.example.proxy.cjlibproxy;
+package com.itself.designpatterns.proxy.cjlibproxy;
 
 import java.util.Collections;
 import java.util.List;

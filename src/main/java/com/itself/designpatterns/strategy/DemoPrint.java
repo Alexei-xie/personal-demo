@@ -1,4 +1,4 @@
-package com.itself.example.strategy;
+package com.itself.designpatterns.strategy;
 
 /**
  * 策略模式

@@ -1,6 +1,6 @@
-package com.itself.example.proxy.staticproxy;
+package com.itself.designpatterns.proxy.staticproxy;
 
-import com.itself.example.proxy.Landlord;
+import com.itself.designpatterns.proxy.Landlord;
 
 /**
  * @Author xxw
