@@ -91,6 +91,7 @@ public class Test01 {
     public void testToken(){
         String token = JwtUtils.createToken("xxw", "12");
         System.out.println(token);
+        System.out.println(JwtUtils.getAccount(token));
     }
     @Test
     public void testLo4j(){
