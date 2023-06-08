@@ -1,18 +1,18 @@
 package com.itself.example.event;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.event.EventListener;
+import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 /**
- * 使用@EventListener注解：
- * 使用@EventListener注解可以将监听器自动注入到Spring事件框架中，
- * 同时Spring会自动管理监听器的生命周期。当监听器所在的Bean被销毁时，监听器也会被销毁
+ * 监听器的注册和注销可能造成内存泄漏：如果不及时将不需要的监听器注销掉，可能会导致内存泄漏问题
+ * @Author xxw
+ * @Date 2023/06/06
  */
 @Component
 @Slf4j
-public class NoticeListener {
-    @EventListener
+public class NoticeListener1 implements ApplicationListener<NoticeEvent> {
+    @Override
     public void onApplicationEvent(NoticeEvent event) {
       log.info("listener receive the event ! sleep two second... ");
         try {
