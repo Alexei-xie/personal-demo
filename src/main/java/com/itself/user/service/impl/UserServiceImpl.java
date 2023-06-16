@@ -18,29 +18,7 @@ import java.util.List;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper,UserPO> implements UserService{
 
-
-    /**
-     * 注入方式1：   注解注入
-     *          @Resource
-     *          private UserMapper userMapper;
-     * 注入方式2：   set注入
-     *          private UserMapper userMapper;
-     *          @Autowired
-     *          public void setUserMapper(UserMapper userMapper) {
-     *              this.userMapper = userMapper;
-     *          }
-     * 注入方式3：   构造函数注入
-     *          private UserMapper userMapper;
-     *          @Autowired
-     *          public UserServiceImpl(UserMapper userMapper) {
-     *              this.userMapper = userMapper;
-     *          }
-     */
-
-
-    //@Resource
     private UserMapper userMapper;
-
 
     @Autowired
     public UserServiceImpl(UserMapper userMapper) {
