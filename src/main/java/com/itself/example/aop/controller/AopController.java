@@ -12,13 +12,13 @@ import javax.annotation.Resource;
  */
 @RestController
 @Controller
-@RequestMapping("user")
-public class UserController {
+@RequestMapping("aop")
+public class AopController {
     @Resource
     private AopUserService aopUserService;
 
     /**
-     * 访问路径 http://localhost:1212/user/findUserNameByTel?tel=1234567
+     * 访问路径 http://localhost:1212/aop/findUserNameByTel?tel=1234567
      *
      * @param tel 手机号
      * @return userName

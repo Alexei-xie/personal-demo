@@ -11,21 +11,21 @@ public class FunctionUtil {
 
 
     public static void main(String[] args) {
-        // isTrue(true).throwMessage("错误信息");
-      /*  isTrueOrFalse(true).trueOrFalseHandle(() -> {
+        isTrue(false).throwMessage("错误信息");
+        isTrueOrFalse(true).trueOrFalseHandle(() -> {
             System.out.println("true");
         }, () -> {
             System.out.println("false");
-        });*/
-        isBlankOrNotBlank("1").presentOrElseHandle(System.out::println,()->{
-            System.out.println("error");
         });
+        isBlankOrNotBlank("1").presentOrElseHandle(System.out::println,()-> System.out.println("error"));
     }
 
     public static ThrowExceptionFunction isTrue(Boolean flag) {
         return message -> {
             if (flag) {
                 throw new RuntimeException(message);
+            }else {
+                System.out.println("11");
             }
         };
     }
