@@ -46,16 +46,17 @@ public class RedisLock {
     }
 
     /**
-     *  与 tryLock 相对应，用作释放锁
-     * @param lockKey   加锁键
-     * @param clientId  加锁客户端唯一标识(采用UUID)
+     * 与 tryLock 相对应，用作释放锁
+     *
+     * @param lockKey  加锁键
+     * @param clientId 加锁客户端唯一标识(采用UUID)
      */
-    public boolean releaseLock(String lockKey, String clientId) {
-        return Boolean.TRUE.equals(stringRedisTemplate.execute((RedisCallback<Boolean>) redisConnection -> {
+    public void releaseLock(String lockKey, String clientId) {
+        stringRedisTemplate.execute((RedisCallback<Boolean>) redisConnection -> {
             Jedis jedis = (Jedis) redisConnection.getNativeConnection();
             Object result = jedis.eval(RELEASE_LOCK_SCRIPT, Collections.singletonList(lockKey),
                     Collections.singletonList(clientId));
             return RELEASE_SUCCESS.equals(result);
-        }));
+        });
     }
 }

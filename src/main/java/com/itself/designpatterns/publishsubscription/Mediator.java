@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class Mediator {
     // 定义一个Map，用于存储订阅者列表
-    private Map<String, List<Subscriber>> subscribers = new HashMap<>();
+    private final Map<String, List<Subscriber>> subscribers = new HashMap<>();
 
     // 添加订阅者
     public void subscribe(String event, Subscriber subscriber) {

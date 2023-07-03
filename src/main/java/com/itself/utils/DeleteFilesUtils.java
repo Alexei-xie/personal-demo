@@ -2,7 +2,7 @@ package com.itself.utils;
 
 import java.io.File;
 
-public class DeleteUtils {
+public class DeleteFilesUtils {
 
     /**
      * 删除目录下所有文件

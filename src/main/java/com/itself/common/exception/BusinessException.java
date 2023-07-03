@@ -31,7 +31,9 @@ public class BusinessException extends RuntimeException implements Serializable{
     }
 
 
-    public BusinessException() {
+    public BusinessException(String msg) {
+        super(msg);
+        this.msg = msg;
     }
 
     public BusinessException(Integer code, String msg) {
