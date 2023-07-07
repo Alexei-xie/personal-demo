@@ -133,6 +133,9 @@ class FlowDemo {
     }
 }
 
+/**
+ * Mono<T> || Flux<T>
+ */
 class FluxDemo {
     public static void main(String[] args) {
         LongAdder longAdder = new LongAdder();
