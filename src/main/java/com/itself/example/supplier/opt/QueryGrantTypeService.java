@@ -24,9 +24,9 @@ public class QueryGrantTypeService {
      */
     @PostConstruct
     public void dispatcherInit(){
-        grantTypeMap.put("红包",resourceId->grantTypeSerive.redPaper(resourceId));
-        grantTypeMap.put("购物券",resourceId->grantTypeSerive.shopping(resourceId));
-        grantTypeMap.put("qq会员",resourceId->grantTypeSerive.QQVip(resourceId));
+        grantTypeMap.put("redEnvelope",resourceId->grantTypeSerive.redPaper(resourceId));
+        grantTypeMap.put("memberCoupon",resourceId->grantTypeSerive.shopping(resourceId));
+        grantTypeMap.put("QQMember",resourceId->grantTypeSerive.QQVip(resourceId));
     }
  
     public String getResult(String resourceType,String resourceId){

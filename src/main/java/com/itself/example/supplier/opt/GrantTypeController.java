@@ -14,6 +14,9 @@ public class GrantTypeController {
     @Autowired
     private QueryGrantTypeService queryGrantTypeService;
 
+    /**
+     * 访问路径：http://localhost:1212/grantType/redEnvelope/2
+     */
     @GetMapping("/grantType/{key}/{value}")
     public String test(@PathVariable String key,@PathVariable String value){
         return queryGrantTypeService.getResult(key,value);
