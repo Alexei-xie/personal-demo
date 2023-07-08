@@ -6,9 +6,9 @@ import com.rabbitmq.client.*;
 import java.io.IOException;
 
 /**
+ * 消费者1
  * @Author xxw
  * @Date 2022/08/28
- * 消费者1
  */
 public class FanoutConsumer1 {
 

@@ -8,9 +8,9 @@ import java.io.IOException;
 import static com.itself.example.rabbitmq.demo05.TopicProducer.EXCHANGE_TOPIC;
 
 /**
+ * 消费者2
  * @Author xxw
  * @Date 2022/08/28
- * 消费者2
  */
 public class TopicConsumer2 {
 

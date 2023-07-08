@@ -8,9 +8,9 @@ import java.io.IOException;
 import static com.itself.example.rabbitmq.demo01.Send.SIMPLE_QUEUE;
 
 /**
+ * 消息监听时  业务有异常
  * @Author xxw
  * @Date 2022/08/28
- * 消息监听时  业务有异常
  */
 public class ReceivedIncorrect {
     public static void main(String[] argv) throws Exception {

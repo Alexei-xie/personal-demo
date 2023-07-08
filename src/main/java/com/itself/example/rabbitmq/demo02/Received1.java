@@ -6,9 +6,9 @@ import com.rabbitmq.client.*;
 import java.io.IOException;
 
 /**
+ * 消费者1  每次会线程睡眠一秒后再进行消费
  * @Author xxw
  * @Date 2022/08/28
- * 消费者1  每次会线程睡眠一秒后再进行消费
  */
 public class Received1 {
     public static void main(String[] args) throws Exception {

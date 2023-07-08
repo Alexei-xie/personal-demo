@@ -6,10 +6,9 @@ import com.rabbitmq.client.*;
 import java.io.IOException;
 
 /**
+ * 消息监听时  业务无异常
  * @Author xxw
  * @Date 2022/08/26
- *
- * 消息监听时  业务无异常
  */
 public class ReceivedCorrect {
     public static void main(String[] argv) throws Exception {

@@ -8,9 +8,9 @@ import java.io.IOException;
 import static com.itself.example.rabbitmq.demo02.Send.WORK_QUEUE;
 
 /**
+ * 正常消费速度
  * @Author xxw
  * @Date 2022/08/28
- * 正常消费速度
  */
 public class Received2 {
     public static void main(String[] args) throws Exception{

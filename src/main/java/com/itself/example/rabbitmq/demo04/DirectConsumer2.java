@@ -8,9 +8,9 @@ import java.io.IOException;
 import static com.itself.example.rabbitmq.demo04.DirectProducer.*;
 
 /**
+ * 消费者2
  * @Author xxw
  * @Date 2022/08/28
- * 消费者2
  */
 public class DirectConsumer2 {
     public static void main(String[] args) throws Exception {

@@ -5,11 +5,10 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 
 /**
+ * - Fanout：广播，将消息交给所有绑定到交换机的队列
+ * 消息生产者，消息发送到交换机，交换机绑定多个队列  不需要声明 routingKey
  * @Author xxw
  * @Date 2022/08/28
- *
- *  - Fanout：广播，将消息交给所有绑定到交换机的队列
- *  消息生产者，消息发送到交换机，交换机绑定多个队列  不需要声明 routingKey
  */
 public class FanoutProducer {
 

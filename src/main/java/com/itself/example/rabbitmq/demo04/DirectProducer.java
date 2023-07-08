@@ -5,12 +5,10 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 
 /**
- * @Author xxw
- * @Date 2022/08/28
- *
  * Direct：定向，把消息交给符合指定routing key 的队列
  * 发送消息的RoutingKey分别是：insert、update、delete
- *
+ * @Author xxw
+ * @Date 2022/08/28
  */
 public class DirectProducer {
 

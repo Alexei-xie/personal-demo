@@ -5,10 +5,10 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 
 /**
+ * 先启动消费端  按照指定路由监听：  再启动服务端，再投递消息
+ * 使用topic类型的Exchange，发送消息的routing key
  * @Author xxw
  * @Date 2022/08/28
- *  先启动消费端  按照指定路由监听：  再启动服务端，再投递消息
- *  使用topic类型的Exchange，发送消息的routing key
  */
 public class TopicProducer {
 

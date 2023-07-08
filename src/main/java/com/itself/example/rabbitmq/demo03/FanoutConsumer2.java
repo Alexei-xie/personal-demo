@@ -8,9 +8,9 @@ import java.io.IOException;
 import static com.itself.example.rabbitmq.demo03.FanoutProducer.*;
 
 /**
+ * 消费者2
  * @Author xxw
  * @Date 2022/08/28
- * 消费者2
  */
 public class FanoutConsumer2 {
 
