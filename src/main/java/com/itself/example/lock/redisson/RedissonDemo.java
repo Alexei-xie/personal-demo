@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @Author xxw
@@ -22,7 +23,7 @@ public class RedissonDemo {
 
 
 /**
- * http://localhost:1212/redisson/call
+ * http://localhost:1212/close/call
  * 闭锁应用demo： 只能进行减法，减到0结束
  */
 @Slf4j
@@ -33,10 +34,10 @@ class CloseLockDemo{
     private RedissonClient redissonClient;//使用redisson的时候需要注册redis连接地址，即configuration配置
 
     @GetMapping("/call")
-    public String callDragon() throws InterruptedException {
+    public String callDragon(HttpServletRequest request) throws InterruptedException {
+        log.info("请求地址：{}",request.getRemoteAddr());
         RCountDownLatch count = redissonClient.getCountDownLatch("longzhu");
         count.trySetCount(7L);//设置等待计数次数减为0，必须通过相同名称的countDownLatch实例的countDown()方法
-        log.info("等待收集七龙珠");
         count.await();
         return "召唤神龙";
     }
