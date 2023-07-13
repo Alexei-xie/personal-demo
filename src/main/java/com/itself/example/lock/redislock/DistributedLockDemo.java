@@ -1,4 +1,4 @@
-package com.itself.example.redislock;
+package com.itself.example.lock.redislock;
 
 import org.springframework.data.redis.core.StringRedisTemplate;
 
@@ -24,7 +24,7 @@ public class DistributedLockDemo {
 class DistributedLockDemo01 {
     private static final String REDIS_KEY_PREFIX = "service_name";
     @Resource
-    private  StringRedisTemplate redisTemplate;
+    private StringRedisTemplate redisTemplate;
     /**
      * 通过redis分布式锁进行接口防刷
      */
