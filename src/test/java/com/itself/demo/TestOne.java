@@ -19,9 +19,9 @@ import java.util.List;
  * @Author xxw
  * @Date 2021/08/18
  */
-public class Test01 {
+public class TestOne {
 
-    private static final Logger logger = LoggerFactory.getLogger(Test01.class);
+    private static final Logger logger = LoggerFactory.getLogger(TestOne.class);
     @Test
     public void test01(){
         Instant now = Instant.now();
