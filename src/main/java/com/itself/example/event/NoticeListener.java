@@ -2,6 +2,7 @@ package com.itself.example.event;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class NoticeListener {
     @EventListener
+    @Async //表示此方法进行异步调用，还需要在application上添加EnableAsync注解配合生效
     public void onApplicationEvent(NoticeEvent event) {
       log.info("listener receive the event ! sleep two second... ");
         try {
