@@ -16,6 +16,7 @@ public class User implements Serializable,Cloneable {
 
     private static final long serialVersionUID = 1L;
 
+    private String userId;
     private String name = "xxw";
 
     private String age  = "11";
