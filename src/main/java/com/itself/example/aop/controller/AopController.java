@@ -2,10 +2,7 @@ package com.itself.example.aop.controller;
 
 import com.itself.example.aop.service.AopUserService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -21,14 +18,11 @@ public class AopController {
     private AopUserService aopUserService;
 
     /**
-     * 访问路径 http://localhost:1212/aop/findUserNameByTel?tel=1234567
-     *
-     * @param tel 手机号
-     * @return userName
+     * http://localhost:1212/aop/xw/findUserNameByTel?tel=1234567
      */
-//    @OperationLogDetail()
-    @GetMapping("/findUserNameByTel")
-    public String findUserNameByTel(@RequestParam("tel") String tel) {
-        return aopUserService.findUserName(tel);
+    // @OperationLogDetail()
+    @GetMapping("/{user}/findUserNameByTel")
+    public String findUserNameByTel(@PathVariable String user, @RequestParam("tel") String tel) {
+        return aopUserService.findUserName(user,tel);
     }
 }

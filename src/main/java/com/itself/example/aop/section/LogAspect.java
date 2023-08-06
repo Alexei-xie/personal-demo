@@ -45,11 +45,12 @@ public class LogAspect {
         Object res = null;
         long time = System.currentTimeMillis();
         try {
+            //获取执行后的返回值
             res = joinPoint.proceed();
             time = System.currentTimeMillis() - time;
             return res;
         } finally {
-            // 方法执行完成后增加日志
+            // 封装日志信息
             addOperationLog(joinPoint, res, time);
         }
     }
@@ -63,8 +64,8 @@ public class LogAspect {
         operationLog.setArgs(JSON.toJSONString(joinPoint.getArgs()));
         operationLog.setCreateTime(new Date());
         operationLog.setMethod(signature.getDeclaringTypeName() + "." + signature.getName());
-        operationLog.setUserId("#{currentUserId}");
-        operationLog.setUserName("#{currentUserName}");
+        operationLog.setUserId("#{currentUserId}");//此处占位符好像没有用
+        operationLog.setUserName("#{user}");//此处占位符好像没有用
         OperationLogDetail annotation = signature.getMethod().getAnnotation(OperationLogDetail.class);
         if (annotation != null) {
             operationLog.setLevel(annotation.level());
@@ -75,7 +76,7 @@ public class LogAspect {
             operationLog.setOperationUnit(annotation.operationUnit().getValue());
         }
         // TODO 这里保存日志
-        System.out.println("5.记录日志：" + operationLog.toString());
+        System.out.println("5.记录日志：" + operationLog);
     }
 
     /**
@@ -88,18 +89,19 @@ public class LogAspect {
      */
     private String getDetail(String[] argNames, Object[] args, OperationLogDetail annotation) {
 
-        Map<Object, Object> map = new HashMap<Object, Object>(4);
+        //将参数转为map存储：argNames为key 即参数名 args为value 即传参值
+        Map<Object, Object> map = new HashMap<>(4);
         for (int i = 0; i < argNames.length; i++) {
             map.put(argNames[i], args[i]);
         }
-
         String detail = annotation.detail();
         try {
-            detail = "'" + "#{currentUserName}" + "'=》" + annotation.detail();
+            //利用字符串替换来获取注解详细信息
+            detail = "'" + "#{user}" + "'=>" + annotation.detail();
             for (Map.Entry<Object, Object> entry : map.entrySet()) {
                 Object k = entry.getKey();
                 Object v = entry.getValue();
-                detail = detail.replace("{{" + k + "}}", JSON.toJSONString(v));
+                detail = detail.replace("{" + k + "}", JSON.toJSONString(v));
             }
         } catch (Exception e) {
             e.printStackTrace();

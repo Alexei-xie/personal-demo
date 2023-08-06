@@ -13,9 +13,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class AopUserServiceImpl implements AopUserService {
 
-    @OperationLogDetail(detail = "通过手机号[{{tel}}]获取用户名" ,level= 3,operationUnit = OperationUnit.USER,operationType = OperationType.SELECT)
+    @OperationLogDetail(detail = "通过手机号{tel}获取用户名" ,level= 3,operationUnit = OperationUnit.USER,operationType = OperationType.SELECT)
     @Override
-    public String findUserName(String tel) {
+    public String findUserName(String user,String tel) {
+        System.out.println("1.user:" + user );
         System.out.println("2.tel:" + tel);
         return "Blandness";
     }

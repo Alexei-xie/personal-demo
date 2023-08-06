@@ -10,5 +10,5 @@ public interface AopUserService {
      * @param tel
      * @return
      */
-    String findUserName(String tel);
+    String findUserName(String user,String tel);
 }
