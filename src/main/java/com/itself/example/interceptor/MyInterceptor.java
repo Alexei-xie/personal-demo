@@ -4,7 +4,6 @@ import com.itself.demo.bean.User;
 import com.itself.utils.ThreadLocalUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,12 +26,12 @@ public class MyInterceptor implements HandlerInterceptor {
         return HandlerInterceptor.super.preHandle(request, response, handler);
     }
 
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        ThreadLocalUtil.clear();
-        System.out.println("postHandle:" +request.getRequestURI());
-        HandlerInterceptor.super.postHandle(request, response, handler, modelAndView);
-    }
+    // @Override
+    // public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+    //     ThreadLocalUtil.clear();
+    //     System.out.println("postHandle:" +request.getRequestURI());
+    //     HandlerInterceptor.super.postHandle(request, response, handler, modelAndView);
+    // }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
