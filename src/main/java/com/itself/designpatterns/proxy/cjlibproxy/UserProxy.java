@@ -39,6 +39,8 @@ public class UserProxy implements MethodInterceptor {
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
         System.out.println("前置输出");
-        return methodProxy.invokeSuper(o, objects);
+        Object result = methodProxy.invokeSuper(o, objects);
+        System.out.println("后置输出");
+        return result;
     }
 }

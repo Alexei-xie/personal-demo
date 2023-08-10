@@ -32,9 +32,9 @@ public class ProxyFactory {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                         System.out.println("我是前置增强");
-                        method.invoke(target, args);
+                        Object result = method.invoke(target, args);
                         System.out.println("我是后置增强");
-                        return null;
+                        return result;
                     }
                 }
         );
