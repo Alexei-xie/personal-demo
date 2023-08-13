@@ -8,6 +8,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  *  https://cloud.tencent.com/developer/article/1665775  (Java中各种时间类型相互转换)
@@ -125,6 +126,17 @@ public class TimeUtils {
             return Long.parseLong(sdf2.format(sdf3.parse(now))) > Long.parseLong(sdf2.format(sdf3.parse(old)));
         } catch (ParseException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 线程睡眠
+     */
+    public static void sleep(long seconds){
+        try {
+            TimeUnit.SECONDS.sleep(seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }

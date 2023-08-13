@@ -96,5 +96,6 @@ public class TestOne {
     @Test
     public void testLo4j(){
         logger.info("====springboot整合lo4j测试=====");
+        logger.debug("====springboot整合lo4j测试=====");
     }
 }
