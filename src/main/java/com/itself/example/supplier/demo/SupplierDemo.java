@@ -16,9 +16,10 @@ public class SupplierDemo {
 
     }
 
-    public static <T> void testExec(int count, Supplier<T> supplier) {
+    public static <T> void testExec(int count, Supplier supplier) {
         if (count > 2) {
             supplier.exec();
+            supplier.print();//输出默认方法
         } else {
             System.out.println("222");
         }
@@ -34,7 +35,20 @@ public class SupplierDemo {
 }
 
 @FunctionalInterface
-interface Supplier<T> {
+interface Supplier {
 
     void exec();
+
+    /**
+     * 可添加默认的方法用于扩展
+     */
+    default void print(){
+        System.out.println("result");
+    }
+}
+@FunctionalInterface
+interface SupplierGet<T> {
+
+    T get();
+
 }
