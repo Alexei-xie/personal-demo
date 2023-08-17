@@ -13,6 +13,8 @@ public class Strategy {
     }
 
     public void execute() {
-        person.action();
+        if (person != null) {
+            person.action();
+        }
     }
 }

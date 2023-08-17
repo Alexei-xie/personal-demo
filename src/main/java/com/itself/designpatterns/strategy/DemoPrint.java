@@ -7,12 +7,15 @@ package com.itself.designpatterns.strategy;
  */
 public class DemoPrint {
     public static void main(String[] args) {
-        LiSi liSi = new LiSi();
-        Strategy context = new Strategy();
-        context.setPerson(liSi);
-        context.execute();
-        Strategy context1 = new Strategy();
-        context1.setPerson(new ZhangSan());
-        context1.execute();
+        //创建策略代理类
+        Strategy strategy = new Strategy();
+
+        Person zs = new ZhangSan();
+        strategy.setPerson(zs);
+        strategy.execute();
+
+        Person ls = new LiSi();
+        strategy.setPerson(ls);
+        strategy.execute();
     }
 }
