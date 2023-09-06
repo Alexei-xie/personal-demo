@@ -2,6 +2,10 @@ package com.itself.common.threadpool;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 线程池异常日志处理handler
+ * @author duJi
+ */
 @Slf4j
 public class GlobalUncaughtExceptionHandler  implements Thread.UncaughtExceptionHandler {
 

@@ -12,6 +12,7 @@ public class MyThreadFactory implements ThreadFactory {
     @Override
     public Thread newThread(Runnable r) {
         Thread thread =factory.newThread(r);
+        //设置异常日志打印
         thread.setUncaughtExceptionHandler(new GlobalUncaughtExceptionHandler());
         return thread;
     }
