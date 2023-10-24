@@ -43,6 +43,9 @@ mybatis:
 # 测试value注解取值
 demo:
   test: 100
+aaa:
+  name: duJi
+  age: 18
 
 
 

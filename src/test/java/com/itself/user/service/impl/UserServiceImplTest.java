@@ -2,6 +2,7 @@ package com.itself.user.service.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.google.common.collect.Lists;
+import com.itself.common.config.TestConfig;
 import com.itself.user.entity.UserPO;
 import com.itself.user.service.UserService;
 import org.junit.Test;
@@ -25,6 +26,8 @@ public class UserServiceImplTest {
 
     @Resource
     private UserService userService;
+    @Resource
+    private TestConfig config;
 
     @Test
     public void listUser(){
@@ -49,6 +52,8 @@ public class UserServiceImplTest {
     private  int count;
     @Test
     public void testValue() {
+        System.out.println(config.getName());
+        System.out.println(config.getAge());
         System.out.println(count);
     }
 }
